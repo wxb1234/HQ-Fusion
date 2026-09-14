@@ -1,0 +1,34 @@
+task: detection
+
+num_classes: 1
+remap_mscoco_category: False
+
+train_dataloader: 
+  type: DataLoader
+  dataset: 
+    type: CocoXDetection
+    img_folder: /home/cx/Projects/wen/dataSets/LLVIP/images/train
+    ann_file: /home/cx/Projects/wen/dataSets/LLVIP/train.json
+    transforms:
+      type: Compose
+      ops: ~
+  shuffle: True
+  batch_size: 4
+  num_workers: 4
+  drop_last: True 
+
+
+val_dataloader:
+  type: DataLoader
+  dataset: 
+    type: CocoXDetection
+    img_folder: /home/cx/Projects/wen/dataSets/LLVIP/images/test
+    ann_file: /home/cx/Projects/wen/dataSets/LLVIP/test.json
+    transforms:
+      type: Compose
+      ops: ~ 
+
+  shuffle: False
+  batch_size: 8
+  num_workers: 4
+  drop_last: False

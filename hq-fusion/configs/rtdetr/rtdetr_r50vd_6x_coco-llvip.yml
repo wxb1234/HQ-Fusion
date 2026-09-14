@@ -1,0 +1,10 @@
+__include__: [
+  '../dataset/coco_detection-llvip.yml',
+  '../runtime.yml',
+  './include/dataloaderX.yml',
+  './include/optimizer-llvip.yml',
+  './include/rtdetr_r50vd-llvip.yml',
+]
+
+output_dir: ./output/r50-llvip
+epoches: 60

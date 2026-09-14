@@ -1,0 +1,10 @@
+__include__: [
+  '../dataset/coco_detection-vedai.yml',
+  '../runtime.yml',
+  './include/dataloaderX1024.yml',
+  './include/optimizer-vedai.yml',
+  './include/rtdetr_r50vd-vedai1024.yml',
+]
+
+output_dir: ./output/r50-vedai1024
+epoches: 60

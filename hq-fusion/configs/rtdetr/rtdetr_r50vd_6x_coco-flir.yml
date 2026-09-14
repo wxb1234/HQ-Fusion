@@ -1,0 +1,10 @@
+__include__: [
+  '../dataset/coco_detection-flir.yml',
+  '../runtime.yml',
+  './include/dataloaderX.yml',
+  './include/optimizer-flir.yml',
+  './include/rtdetr_r50vd-flir.yml',
+]
+
+output_dir: ./output/r50-flir-ab-cat-linear
+epoches: 60

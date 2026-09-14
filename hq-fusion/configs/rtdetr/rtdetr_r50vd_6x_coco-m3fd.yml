@@ -1,0 +1,10 @@
+__include__: [
+  '../dataset/coco_detection-m3fd.yml',
+  '../runtime.yml',
+  './include/dataloaderX.yml',
+  './include/optimizer-m3fd.yml',
+  './include/rtdetr_r50vd-m3fd.yml',
+]
+
+output_dir: ./output/r50-m3fd
+epoches: 180

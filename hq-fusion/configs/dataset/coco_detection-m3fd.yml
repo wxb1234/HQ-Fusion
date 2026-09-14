@@ -1,0 +1,33 @@
+task: detection
+
+num_classes: 6
+remap_mscoco_category: False
+
+train_dataloader: 
+  type: DataLoader
+  dataset: 
+    type: CocoXDetection
+    img_folder: /home/cx/Projects/wen/dataSets/M3FD/images/train
+    ann_file: /home/cx/Projects/wen/dataSets/M3FD/train.json
+    transforms:
+      type: Compose
+      ops: ~
+  shuffle: True
+  batch_size: 4
+  num_workers: 4
+  drop_last: True 
+
+val_dataloader:
+  type: DataLoader
+  dataset: 
+    type: CocoXDetection
+    img_folder: /home/cx/Projects/wen/dataSets/M3FD/images/val
+    ann_file: /home/cx/Projects/wen/dataSets/M3FD/val.json
+    transforms:
+      type: Compose
+      ops: ~ 
+
+  shuffle: False
+  batch_size: 8
+  num_workers: 4
+  drop_last: False
