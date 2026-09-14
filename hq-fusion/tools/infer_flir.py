@@ -176,15 +176,6 @@ def main(args, ):
     else:
         raise AttributeError('Only support resume to load model.state_dict by now.')
     # NOTE load train mode state -> convert to deploy mode
-    total_params = 0
-    for key, tensor in state.items():
-    # 计算当前张量的参数量（元素个数）
-        params = tensor.numel()
-        total_params += params
-        print(f"{key}: {params:,} ({tensor.shape})")
-
-    print(f"总参数量: {total_params:,}")
-    # print(state.keys())
     cfg.model.load_state_dict(state)
     class Model(nn.Module):
         def __init__(self, ) -> None:
@@ -198,9 +189,6 @@ def main(args, ):
             return outputs
     
     model = Model().to(args.device)
-
-    # t = get_flops(model.model)
-    # print(t, '----glops')
 
     # 遍历文件夹
     for name in os.listdir(args.im_folder):
@@ -230,10 +218,8 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--config', type=str, default='rtdetr_pytorch/configs/rtdetr/rtdetr_r50vd_6x_coco-flir.yml')
-    parser.add_argument('-r', '--resume', type=str, default='output/r50-flir/checkpoint0032_ok.pth')
+    parser.add_argument('-r', '--resume', type=str, default='output/r50-flir/checkpoint.pth')
     
-    # name = 'FLIR_08870.jpeg'
-
     parser.add_argument('-f', '--im-file', type=str, default='/home/cx/Projects/wen/dataSets/flir_align/images/test/')
     parser.add_argument('-folder', '--im-folder', type=str, default='/home/cx/Projects/wen/dataSets/flir_align/images/test/')
     parser.add_argument('-s', '--sliced', type=bool, default=False)

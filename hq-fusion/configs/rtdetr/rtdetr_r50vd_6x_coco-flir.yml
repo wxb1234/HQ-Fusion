@@ -6,5 +6,5 @@ __include__: [
   './include/rtdetr_r50vd-flir.yml',
 ]
 
-output_dir: ./output/r50-flir-ab-cat-linear
+output_dir: ./output/r50-flir
 epoches: 60
