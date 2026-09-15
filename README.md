@@ -4,6 +4,20 @@ This code is the algorithm implementation for article `HQ-Fusion: A High-Quality
 # Code Information
 This code is built upon the RT-DETR codebase. The RT-DETR repository is located at: https://github.com/lyuwenyu/RT-DETR/tree/main/rtdetr_pytorch.
 
+# 数据集可视化展示
+
+### FLIR 数据集
+![FLIR](hq-fusion/images/flir.jpg)
+
+### LLVIP 数据集
+![LLVIP](hq-fusion/images/llvip.jpg)
+
+### M3FD 数据集
+![M3FD](hq-fusion/images/m3fd.jpg)
+
+### VEDAI 数据集
+![VEDAI](hq-fusion/images/vedai.jpg)
+
 # Directory Structure
 ```
 ├── hq-fusion
